@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap');
+
+*{
+   padding:0;
+   margin:0;
+}
+body{
+   text-decoration: none;
+   font-size: 18px;
+   font-family: 'Bai Jamjuree', sans-serif;
+   text-align: center;
+   box-sizing: border-box;
+   color:hsl(201, 11%, 66%);
+}
+a{
+   text-decoration: none;
+   color:hsl(201, 11%, 66%);
+}
+ul{list-style: none;}
+
+h1,h2,h3,h4{
+   font-weight: 900 !important;
+   color:hsl(210, 10%, 33%);
+}
+
+// Container and Wrap Styles
+.container{
+   padding:1rem;
+   box-sizing: border-box;
+   // width:100vw;
+}
+.wrap{
+   &-1{max-width:50%;}
+   &-2{max-width:80%;}
+}
+
+// Button Styles
+.btn{
+   padding: 1rem;
+   border-radius:30px;
+   color:#fff;
+   margin: 0 .5rem;
+   &-blue{
+      background:hsl(233, 100%, 69%);
+   }
+   &-green{
+      background:hsl(171, 66%, 44%);
+   }
+   &:hover{
+      cursor: pointer;
+   }
+}
+
+// Background Color
+.bg-footer{background:#f4f4f4}
+   
+// Header
+#header{
+   background: url('../images/bg-header-desktop.png') no-repeat;
+   background-size: cover;
+   background-position: center;
+   height:60%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   
+   .wrap-1{
+      // Selects all element in wrap class
+      & > *{
+         margin:1rem 0;
+      }
+      // Selects last child element in wrap class
+      & > :last-child{
+         margin-top:2.5rem;
+      }
+   }
+}
+// Messages Styles
+#card-messages{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height:13rem;
+
+   .wrap-1 > *{
+      margin:.5rem;
+      padding: .5rem;
+   }
+
+   // Bottom Card
+   &.card-bottom{
+      height:18rem;
+      p{
+         margin-bottom:2rem;
+      }
+   }
+}
+
+// Tech Section
+#tech{
+   display:flex;
+   justify-content: space-between;
+   padding:1rem;
+   text-align: start;
+   align-items: center;
+   .tech-image{
+      width:50vw;
+      // transform: scale(1.2);
+   }
+   
+   .tech-side-right{
+      display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      padding-left:3rem;
+      .card-tech{
+         width:70%;
+         padding:1rem;
+      }
+   }
+}
+
+// Section Big-Image
+#big-devices-image{
+   .devices-image{
+      width:60vw;
+      height: auto;
+   }  
+}
+
+// Section Work
+#card-work{
+    .wrap-2{
+      display:flex;
+      padding:1rem;
+      justify-content: space-evenly;
+      margin:0 auto;
+      .card-work-lists{
+         width:20vw;
+         height:15rem;
+         display:flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items:center ; 
+         padding:.8rem;
+
+         & > * {
+            margin: .3rem 0;
+         }
+         img{
+            width:40px;
+            height:auto;
+         }
+      }
+   }
+}
+
+// Section Companies
+#tile-companies{
+   .wrap-2{
+      display:grid;
+      grid-template-columns: repeat(5,1fr);
+      margin:0 auto;
+      gap:.5rem;
+      .tile{
+         padding:1rem;
+         &-images{
+            width:auto;
+            height:35px;
+         }
+      }
+   }
+}
+
+
+// Footer Styles
+#footer{
+   .wrap-2{
+      margin:0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: start;
+      .footer{
+         &-logo{
+            width:50px;
+            height: auto;
+            margin-right: 2rem;
+         }
+         &-side-left{
+            display: flex;
+            padding: 1rem;
+            ul{
+               display: grid;
+               grid-template-columns: repeat(3,1fr);
+               gap:.5rem;
+               .list-links:hover{
+                  color:hsl(233, 100%, 69%);
+               }
+            }
+         }
+         &-side-right{
+            .icons{
+               margin:0 .5rem;
+            }
+            .icon-links{
+               &:hover{
+                  cursor: pointer;
+               }
+            }
+         }
+      }
+      
+      
+   }
+}
+
+@media(max-width:900px){
+   .wrap{
+      &-1{
+         max-width:75%;
+      }
+      &-2{
+         max-width:90%;
+      }
+   }
+
+   #tile-companies{
+      .wrap-2{
+         display:grid;
+         grid-template-columns: repeat(2,1fr);
+         gap:1rem;
+      }
+   }
+}
+// Smaller devices
+@media(max-width:610px){
+   .container{
+      padding:.3rem;
+   }
+   .wrap{
+      &-1,&-2{
+         max-width:95%;
+      }
+   }
+   .btn{
+      margin:.2rem 0;
+      &-margin{
+         display: flex;
+         flex-direction: column;
+      }
+   }
+   // Section Tech
+   #tech{
+     flex-direction: column;
+     margin:1rem 0;
+     .tech-image{
+        width:100%;
+     }
+     .tech-side-right{
+         padding:0;
+        .card-tech{
+         width:95%;
+      }
+     }
+   }
+   // Section Big Image
+   #big-devices-image{
+      .devices-image{
+         width:100%;
+      }
+   }
+   // Section Work
+   #card-work{
+      .wrap-2{
+         flex-direction: column;
+         .card-work-lists{
+            width:100%;
+            padding:.5rem;
+            height:auto;
+         }
+      }
+   }
+   // Section Companies
+   #tile-companies{
+      .wrap-2{
+         grid-template-columns: 1fr;
+      }
+   }
+   // Section Messages - bottom message
+   #card-messages.card-bottom{
+      height:auto;
+   }
+   // Footer
+   #footer{
+      .wrap-2{
+         flex-direction: column;
+         text-align: center;
+         .footer{
+            &-logo{
+               margin:.2rem 0;
+            }
+            &-side-left{
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
+               ul{
+                  grid-template-columns: 1fr;
+               }
+            }
+         }
+      }
+   }
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
